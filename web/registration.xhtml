@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Регистрация</title>
+    </h:head>
+    <h:body style="background-color: #E4EAFE">
+        <p:panel style="text-align: center; width: 300px; margin-left: auto; margin-right: auto; margin-top: 10%" id="regPan">
+           
+            <h:form>
+                <p:outputLabel style="margin-top: 10px; display: inline-block;" value="Please enter your details" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="nick" value=""/>
+                <p:watermark for="nick" value="Nickname*" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="pass1" value=""/>
+                <p:watermark for="pass1" value="Password*" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="pass2" value=""/>
+                <p:watermark for="pass2" value="Confirm your password*" />
+                <p:inputText style="box-shadow: none; margin-left: -5px; width: 100%; margin-top: 10px; display: inline-block" id="mail" value="#{registration.email}" requiredMessage="Please enter your email address."
+                             validatorMessage="Invalid email format">
+                    <f:validateRegex
+                        pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+                </p:inputText>
+                <p:watermark for="mail" value="Email Address*" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="fullName" value=""/>
+                <p:watermark for="fullName" value="Full name" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="skype" value=""/>
+                <p:watermark for="skype" value="Skype" />
+                <p:inputText style="box-shadow: none; margin-top: 10px; margin-left: -5px; width: 100%; display: inline-block" id="web" value=""/>
+                <p:watermark for="web" value="Web" />
+                <p:commandButton value="Registration" icon="ui-icon-star"
+                                 actionListener="#{loginBean.loginButton}"
+                                 style="margin-left: auto; margin-right: auto; box-shadow: none; background: none; display: block; margin-top: 15px; width: 200px;"
+                                 update="@form"/>
+
+            </h:form>
+        </p:panel>
+    </h:body>
+</html>
+

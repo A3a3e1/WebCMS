@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="WebAppPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+<!--    <class>ua.com.codefire.cms.dao.entity.Role</class>
+    <class>ua.com.codefire.cms.dao.entity.User</class>
+    <class>ua.com.codefire.cms.dao.entity.Page</class>
+    <class>ua.com.codefire.cms.dao.entity.Account</class>-->
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://213.160.150.179:13306/cms?zeroDateTimeBehavior=convertToNull&amp;characterEncoding=utf-8"/>
+      <property name="javax.persistence.jdbc.user" value="cms"/>
+      <property name="javax.persistence.jdbc.password" value="cms"/>
+    </properties>
+  </persistence-unit>
+</persistence>
